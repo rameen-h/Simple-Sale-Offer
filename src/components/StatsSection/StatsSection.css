@@ -1,0 +1,144 @@
+/* ===== Stats Section (namespaced to avoid conflicts) ===== */
+
+.simple-sale-blue-ribbon {
+  background-color: #5aa5f5;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.simple-sale-blue-ribbon__content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.simple-sale-blue-ribbon__header-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.simple-sale-blue-ribbon__cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* --- CTA Row: address input (left) + button (right) --- */
+.ss-cta-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;                 /* tidy space between input and button */
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  padding: 6px;              /* small inner padding so input isn’t flush */
+}
+
+/* Wrap for the input so it can flex properly */
+.ss-address-wrap {
+  flex: 1 1 auto;
+  min-width: 0;              /* prevents overflow in flex rows */
+}
+
+/* Inner container if you later mount autocomplete/suggestions here */
+.ss-address-inner {
+  display: flex;
+  width: 100%;
+}
+
+/* The actual input */
+.ss-address-input {
+  width: 100%;
+  border: none;
+  padding: 10px 12px;
+  font-size: 1rem;
+  outline: none;
+  color: #222;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* CTA button — namespaced to avoid collisions with hero */
+.ss-button.ss-explore-btn {
+  background-color: #ff9900;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 4px;
+  flex: 0 0 auto;            /* keep its natural size on the right */
+  transition: background-color 0.25s ease;
+}
+
+.ss-button.ss-explore-btn:hover {
+  background-color: #cc5200;
+}
+
+/* --- Stats row under the CTA --- */
+.row.see-your-estimate-stats {
+  display: flex;
+  justify-content: space-between;
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+.col-xs-12.col-md-4 {
+  flex: 1;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.stats {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .simple-sale-blue-ribbon__cta-wrap,
+  .row.see-your-estimate-stats {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .ss-cta-area {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .ss-address-input,
+  .ss-button.ss-explore-btn {
+    width: 100%;
+    border-radius: 6px !important;
+  }
+
+  .row.see-your-estimate-stats {
+    text-align: center;
+  }
+
+  .col-xs-12.col-md-4 {
+    padding: 8px 0;
+  }
+}

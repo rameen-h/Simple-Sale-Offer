@@ -1,0 +1,93 @@
+.section-area__container.generic-faqs {
+  display: block;
+  max-width: 700px;       /* Optional: limit max width */
+  margin: 0 auto;         /* Center horizontally */
+  padding: 20px;
+  font-family: Arial, sans-serif; /* Feel free to change */
+  color: #333;
+}
+
+.section-area__container.generic-faqs > h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;    /* Space between heading and accordion */
+}
+
+/* Accordion container */
+.accordion {
+  display: block;
+}
+
+/* Each accordion node */
+.accordion-node {
+  border-top: 1px solid #ddd;
+}
+
+/* Accordion title area */
+.accordion-node__title {
+  cursor: pointer;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+/* Title text */
+.accordion-node__title--text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex-grow: 1; /* takes up space to push expand btn right */
+}
+
+/* Subtitle (empty in your markup, but styled anyway) */
+.accordion-node__subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Expand button container */
+.accordion-node__title--expand-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate chevron when open (you'll toggle a class in JS) */
+.accordion-node.expanded .accordion-node__title--expand-btn {
+  transform: rotate(90deg);
+}
+
+/* Chevron icon */
+.chevron-icon-component {
+  fill: #333;
+  width: 13px;
+  height: 8px;
+}
+
+/* Accordion body */
+.accordion-node__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* When expanded - JS toggles this */
+.accordion-node.expanded .accordion-node__body {
+  max-height: 500px; /* enough to show content */
+  transition: max-height 0.6s ease;
+}
+
+/* Body wrapper padding */
+.accordion-node__body-wrapper {
+  padding: 10px 15px 20px 15px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #444;
+}
+

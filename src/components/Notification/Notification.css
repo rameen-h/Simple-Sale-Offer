@@ -1,0 +1,43 @@
+.notification-sidebar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 280px;              
+  background-color: #fbfbfb;  
+  color: #004085;             
+  padding: 1rem 1.5rem 1rem 3rem; 
+  border-radius: 8px 8px 0 0;
+  box-shadow: -3px -3px 10px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;         
+  font-weight: 600;
+  user-select: none;
+  cursor: default;
+  overflow: hidden;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Icon style */
+.notification-sidebar .icon {
+  flex-shrink: 0;
+  width: 40px;    /* bigger width */
+  height: 40px;   /* bigger height */
+  object-fit: contain;
+}
+
+/* Show/hide transitions */
+.notification-sidebar.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification-sidebar.slide-out {
+  transform: translateX(100%);
+  opacity: 0;
+}

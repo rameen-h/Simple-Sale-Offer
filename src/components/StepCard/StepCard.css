@@ -1,0 +1,86 @@
+.steps-wrapper {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 30px 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  padding: 0 40px;
+}
+
+/* Horizontal connecting line */
+.steps-container::before {
+  content: '';
+  position: absolute;
+  top: 115px; /* Adjust based on step-circle height */
+  left: calc(16.66% + 20px); /* Start near center of 1st circle */
+  right: calc(16.66% + 20px); /* End near center of 3rd circle */
+  height: 2px;
+  background-color: #90caf9; /* light blue */
+  z-index: 1;
+}
+
+.step-card {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Image container */
+.icon {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.icon img {
+  max-width: 80px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Step circle base style */
+.step-circle {
+  margin: 10px auto 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  z-index: 2;
+  border: 2px solid #90caf9;
+  color: #0277bd;
+  background-color: white;
+}
+
+/* Active step (step 1 only) */
+.step-card:first-child .step-circle {
+  background-color: #5eb3f9; /* Filled blue */
+  color: white;
+}
+
+/* Card content */
+.card-body {
+  padding: 10px 10px 0;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #333;
+}

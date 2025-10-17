@@ -1,0 +1,77 @@
+.page-footer-component {
+  background-color: #f8f8f8;
+  color: #555;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  padding: 20px 15px;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  overflow: visible;
+  padding-bottom: 60px;
+}
+
+.grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-xs-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.accessibility-note {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.accessibility-note li {
+  margin-bottom: 10px;
+}
+
+.last-details {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-weight: 600;
+  color: #444;
+}
+
+.last-details > li {
+  margin-right: 15px;
+}
+
+.tos ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+.tos ul li a {
+  color: #0073e6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tos ul li a:hover,
+.tos ul li a:focus {
+  color: #004a99;
+  text-decoration: underline;
+}
+
+/* Utility class for hiding on quiz start - add your own JS toggle */
+.hide-on-quiz-start {
+  /* For demo, visible by default */
+}

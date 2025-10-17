@@ -1,0 +1,181 @@
+
+/* Layout */
+.promo-section__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 500px;
+  position: relative;
+  overflow: visible; /* allow dropdown to overflow */
+}
+
+.promo-section__content {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  position: relative;
+  z-index: 2; /* content above image */
+}
+
+.promo-section__wrapper img {
+  flex: 0 0 45%;
+  max-width: 100%;
+  max-height: 420px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1; /* image behind content */
+}
+
+/* Optional text */
+.title { margin: 0 0 0.5rem; line-height: 1.2; }
+.description { margin: 0 0 1rem; color: #333; }
+
+/* ===============================
+   Search control with button INSIDE
+   =============================== */
+
+/* Cap overall field width so it doesn't get too wide */
+.autocomplete-wrapper {
+  width: 100%;
+  max-width: clamp(360px, 42vw, 560px); /* responsive cap */
+  position: relative;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+/* Composite field: border/background live here so field extends behind button */
+.autocomplete-box.geocoder-control {
+  position: relative;               /* anchor for button */
+  width: 100%;
+  display: block;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  box-shadow: none;
+  overflow: visible;
+  padding-right: 148px;             /* reserve space inside field for the button */
+  box-sizing: border-box;
+}
+
+/* Mapbox control fills width; transparent so outer container provides the “field” look */
+#hero-input .mapboxgl-ctrl-geocoder {
+  position: relative;
+  width: 100%;
+  min-height: 52px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* Input text area */
+#hero-input input.mapboxgl-ctrl-geocoder--input {
+  position: relative;
+  z-index: 1;                        /* below the button overlay */
+  width: 100%;
+  height: 52px;
+  font-size: 1.05rem;
+  padding: 0 14px;                   /* right space handled by parent padding-right */
+  border: none;
+  outline: none;
+  border-radius: 10px;               /* visually matches outer */
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* Hide Mapbox right-side widgets to free space for our button */
+#hero-input .mapboxgl-ctrl-geocoder--icon,
+#hero-input .mapboxgl-ctrl-geocoder--pin-right,
+#hero-input .mapboxgl-ctrl-geocoder--button {
+  display: none !important;
+}
+
+/* Suggestions dropdown aligned with full field width and above the button */
+#hero-input .suggestions {
+  position: absolute !important;
+  top: calc(100% + 2px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-radius: 0 0 10px 10px;
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 9999 !important;          /* above input & inside button */
+}
+
+/* Button INSIDE the field (right) */
+.autocomplete-box.geocoder-control .btn-primary {
+  position: absolute;
+  top: 50%;
+  right: 8px;                        /* snug to right inside field */
+  transform: translateY(-50%);
+  height: 40px;
+  padding: 0 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff9900;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+  z-index: 9990;                     /* above input, below dropdown */
+  margin-left: 0 !important;         /* safety: no stray offsets */
+}
+
+.autocomplete-box.geocoder-control .btn-primary:hover {
+  background-color: #cc5200;
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 992px) {
+  .promo-section__wrapper img { flex: 0 0 48%; }
+}
+
+@media (max-width: 768px) {
+  .promo-section__wrapper {
+    flex-direction: column;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .promo-section__content,
+  .promo-section__wrapper img {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .autocomplete-wrapper {
+    max-width: 100%;
+  }
+
+  .autocomplete-box.geocoder-control {
+    padding-right: 140px;           /* slight reduction on small screens */
+  }
+
+  #hero-input input.mapboxgl-ctrl-geocoder--input {
+    height: 56px;
+  }
+
+  .autocomplete-box.geocoder-control .btn-primary {
+    height: 44px;
+    right: 8px;
+  }
+}

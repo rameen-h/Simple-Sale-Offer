@@ -1,0 +1,63 @@
+.page-header-component {
+  background-color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.page-header-component.scrolled {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.header-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-logo .header-logo-component {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo.show {
+  display: block;
+  opacity: 1;
+}
+
+.button-wrapper .button {
+  background-color: #ff9900;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.button-wrapper .button:hover {
+  background-color: #eb8f0e;
+}
+
+.mapboxgl-ctrl-geocoder {
+  z-index: 10; /* higher than other elements */
+  position: relative;
+}
