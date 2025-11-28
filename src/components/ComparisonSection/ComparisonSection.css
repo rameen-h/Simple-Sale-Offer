@@ -4,7 +4,7 @@
   max-width: 700px; /* limits max width */
   border-collapse: separate;
   border-spacing: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 1px solid #ccc;
   margin: 0 auto; /* centers the table horizontally */
   background-color: #fff;

@@ -1,14 +1,15 @@
 .notification-sidebar {
   position: fixed;
-  bottom: 20px;
+  bottom: 140px;            /* 2x higher jump */
   right: 20px;
-  width: 280px;              
-  background-color: #fbfbfb;  
-  color: #004085;             
-  padding: 1rem 1.5rem 1rem 3rem; 
+  width: 420px;             /* wider box */
+  min-height: 100px;        /* taller box */
+  background-color: #fbfbfb;
+  color: #0b0b0b;
+  padding: 1.25rem 2rem 1.25rem 1rem; /* reduced left padding */
   border-radius: 8px 8px 0 0;
-  box-shadow: -3px -3px 10px rgba(0, 0, 0, 0.15);
-  font-size: 0.95rem;         
+  box-shadow: -3px -3px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;        /* larger font */
   font-weight: 600;
   user-select: none;
   cursor: default;
@@ -16,7 +17,7 @@
   z-index: 10000;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 
   transform: translateX(100%);
   opacity: 0;
@@ -26,9 +27,36 @@
 /* Icon style */
 .notification-sidebar .icon {
   flex-shrink: 0;
-  width: 40px;    /* bigger width */
-  height: 40px;   /* bigger height */
+  width: 60px;     /* bigger icon */
+  height: 60px;    /* bigger icon */
   object-fit: contain;
+  margin-left: 0;  /* remove any extra space */
+}
+
+/* Message text */
+.notification-sidebar .message {
+  flex: 1;
+  margin: 0;
+  line-height: 1.4;
+  font-size: 1.05rem;  /* bigger font */
+}
+
+/* Close button */
+.notification-sidebar .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;   /* bigger cross */
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+  z-index: 10001;
+}
+
+.notification-sidebar .close-btn:hover {
+  color: #444;
 }
 
 /* Show/hide transitions */

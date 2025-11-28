@@ -18,7 +18,7 @@ export default function Footer() {
               <li style={{ marginTop: "15px" }}>
                 Simple Sale Offer is a property of Simple Sale Offer, Inc.
                 Simple Sale Offer, Inc. is a licensed real estate broker in the
-                State of California, DRE license # 01900940.
+                State of California, DRE <br></br>license # 01900940.
               </li>
             </ul>
             <ul className="last-details">

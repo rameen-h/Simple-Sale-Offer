@@ -13,31 +13,33 @@ const NotificationSidebar = ({ interval = 7000 }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Show a new message every interval and animate in/out
     const cycle = setInterval(() => {
-      setVisible(false); // trigger slide out
+      setVisible(false); // slide out
 
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % messages.length);
-        setVisible(true); // trigger slide in
-      }, 500); // duration of slide out animation
+        setVisible(true); // slide in
+      }, 500);
     }, interval);
 
     return () => clearInterval(cycle);
   }, [interval]);
 
-  return (
-  <div className={`notification-sidebar ${visible ? 'slide-in' : 'slide-out'}`}>
-    <img
-  src="https://start-prudential-org-366a3d4b97cd.herokuapp.com/views/offer/assets/cash-offer-ad9f678d36d1bfaeb092512e5bb54a8e.webp"
-  alt="Notification Icon"
-  className="icon"
-  style={{ width: '40px', height: '40px' }}
-/>
-    <p>{messages[currentIndex]}</p>
-  </div>
-);
+  const handleClose = () => {
+    setVisible(false);
+  };
 
+  return (
+    <div className={`notification-sidebar ${visible ? 'slide-in' : 'slide-out'}`}>
+      <button className="close-btn" onClick={handleClose}>×</button>
+      <img
+        src="https://start-prudential-org-366a3d4b97cd.herokuapp.com/views/offer/assets/cash-offer-ad9f678d36d1bfaeb092512e5bb54a8e.webp"
+        alt="Notification Icon"
+        className="icon"
+      />
+      <p className="message">{messages[currentIndex]}</p>
+    </div>
+  );
 };
 
 export default NotificationSidebar;

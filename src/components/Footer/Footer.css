@@ -1,13 +1,17 @@
+/* ===============================
+   Footer Styles
+   =============================== */
 .page-footer-component {
   background-color: #f8f8f8;
-  color: #555;
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  padding: 20px 15px;
+  color: #666; /* subtle grey text */
+  align-items: center;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  padding: 30px 15px 60px 15px; /* extra bottom padding */
   border-top: 1px solid #ddd;
   margin-top: 40px;
   overflow: visible;
-  padding-bottom: 60px;
+  text-align: center; /* center all text inside */
 }
 
 .grid-container {
@@ -18,6 +22,7 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* center children horizontally */
 }
 
 .col-xs-12 {
@@ -25,53 +30,77 @@
   max-width: 100%;
 }
 
+/* Accessibility / fine print notes */
 .accessibility-note {
+  padding-top: 1rem;
   list-style: none;
   padding-left: 0;
   margin-bottom: 20px;
-  color: #666;
-  line-height: 1.4;
+  color: #888; /* grey text */
+  line-height: 1.5;
+  text-align: center;
 }
 
 .accessibility-note li {
   margin-bottom: 10px;
 }
 
+/* Last details section (like copyright) */
 .last-details {
   list-style: none;
   padding-left: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* center items */
   align-items: center;
   font-weight: 600;
-  color: #444;
+  color: #888;
+  margin-bottom: 70px;
+  line-height: 1.4;
 }
 
 .last-details > li {
-  margin-right: 15px;
+  margin: 0 10px; /* spacing between items */
+  padding-bottom: 0;
 }
 
+/* Terms of Service / Privacy Policy links */
 .tos ul {
   list-style: none;
   padding-left: 0;
   display: flex;
+  justify-content: center; /* center items */
   gap: 15px;
   margin: 0;
 }
 
 .tos ul li a {
-  color: #0073e6;
+  color: #888; /* grey links */
   text-decoration: none;
   transition: color 0.2s ease;
+  font-weight: 600;
 }
 
 .tos ul li a:hover,
 .tos ul li a:focus {
-  color: #004a99;
+  color: #555;
   text-decoration: underline;
 }
 
 /* Utility class for hiding on quiz start - add your own JS toggle */
 .hide-on-quiz-start {
   /* For demo, visible by default */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .last-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tos ul {
+    flex-direction: column;
+    gap: 8px;
+  }
 }

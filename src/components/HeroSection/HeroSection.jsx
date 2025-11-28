@@ -42,6 +42,7 @@ const PromoSection = () => {
       const geocoder = new window.MapboxGeocoder({
         accessToken: window.mapboxgl.accessToken,
         placeholder: "   Enter property address",
+        countries: "us",
         types: "address",
         marker: false,
         flyTo: false,
@@ -107,10 +108,13 @@ const PromoSection = () => {
   return (
     <section className="promo-section__wrapper">
       <div className="promo-section__content">
-        <h1 className="title">Who will win? Who can close in 7 days?</h1>
+        <h1 class="title">Who will win? Who can
+          <br></br>
+        close in 7 days?</h1>
+        <br></br>
         <div className="description no-wrap">
-          Compare the top real estate agents and the largest investor network to
-          find out who will get you the best price and who will close the fastest.
+          Compare the top real estate agents and the largest <br></br>investor network to
+          find out who will get you the <br></br> best price and who will close the fastest.
         </div>
 
         <div className="cta-wrap">
